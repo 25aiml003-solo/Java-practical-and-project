@@ -19,28 +19,18 @@ public class Account implements Serializable, Comparable<Account> {
         this.balance = balance;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public synchronized long getBalance() {
-        return balance;
-    }
+    public String getAccountNumber() { return accountNumber; }
+    public String getOwnerName() { return ownerName; }
+    public synchronized long getBalance() { return balance; }
 
     public synchronized void deposit(long amount) throws InvalidAmountException {
-        if (amount <= 0)
-            throw new InvalidAmountException("Deposit amount must be positive.");
+        if (amount <= 0) throw new InvalidAmountException("Deposit amount must be positive.");
         balance += amount;
     }
 
     public synchronized void withdraw(long amount)
             throws InsufficientFundsException, InvalidAmountException {
-        if (amount <= 0)
-            throw new InvalidAmountException("Withdrawal amount must be positive.");
+        if (amount <= 0) throw new InvalidAmountException("Withdrawal amount must be positive.");
         if (amount > balance)
             throw new InsufficientFundsException(amount - balance);
         balance -= amount;
@@ -57,9 +47,7 @@ public class Account implements Serializable, Comparable<Account> {
     }
 
     @Override
-    public int hashCode() {
-        return accountNumber.hashCode();
-    }
+    public int hashCode() { return accountNumber.hashCode(); }
 
     @Override
     public String toString() {
