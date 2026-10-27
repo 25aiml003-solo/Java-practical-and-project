@@ -1,3 +1,2 @@
-Total deposits: 0
-Total withdrawals: 0
-Net change: 0
+MiniBank end-of-day report
+Generated when menu option 7 is selected.
